@@ -22,10 +22,23 @@ const About = () => {
         <Box maxW="xl">
           <Heading mb={4}>Sobre mí</Heading>
           <Text fontSize="lg" color="gray.600" mb={6}>
-            Soy Óscar Álvarez Oliveira, un desarrollador especializado en DevOps y Cloud.
-            Me apasiona construir soluciones eficientes, automatizar procesos
-            y trabajar con tecnologías como Docker, Terraform y Jenkins.
-            Me gusta el aprendizaje constante y enfrentar nuevos retos en entornos técnicos dinámicos.
+            Oscar Alvarez Oliveira
+            Lorem ipsum dolor sit amet, consectetur adipisici elit, 
+            sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquid ex ea commodi consequat. 
+            Quis aute iure reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint obcaecat cupiditat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisici elit, 
+            sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquid ex ea commodi consequat. 
+            Quis aute iure reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint obcaecat cupiditat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
           </Text>
 
           <Stack direction="row" spacing={4}>

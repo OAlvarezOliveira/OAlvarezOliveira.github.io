@@ -1,33 +1,49 @@
+// src/components/Sidebar.jsx
 import {
-  Box, VStack, Link, IconButton, Drawer, DrawerOverlay,
-  DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody,
-  useDisclosure, useColorModeValue, HStack, Text
+  Box,
+  VStack,
+  Link,
+  IconButton,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  useDisclosure,
+  useColorModeValue,
+  HStack,
+  Text,
 } from "@chakra-ui/react";
-import { Menu } from "lucide-react"; // opcional, viene con lucide-react
-import useScrollSpy from "../hooks/useScrollSpy";
+import { Menu } from "lucide-react"; // usa el icono de lucide-react
 
-const SECTIONS = [
-  { id: "about", label: "About" },
-  { id: "techstack", label: "Tech Stack" },
-  { id: "career", label: "Career" },
-];
+// Ajusta aquí el orden/etiquetas del menú
+const SECTIONS = ["About", "TechStack", "Projects"];
 
-const scrollTo = (id) => {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-};
-
-export default function Sidebar() {
+export default function Sidebar({ active, onSelect }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const activeId = useScrollSpy(SECTIONS.map(s => s.id), 120);
 
   const bg = useColorModeValue("gray.50", "gray.900");
   const border = useColorModeValue("gray.200", "gray.700");
-  const active = useColorModeValue("blue.600", "blue.300");
+  const activeColor = useColorModeValue("blue.600", "blue.300");
+
+  const Item = ({ label }) => (
+    <Link
+      onClick={() => {
+        onSelect(label);
+        onClose();
+      }}
+      fontWeight={active === label ? "bold" : "medium"}
+      color={active === label ? activeColor : "inherit"}
+      _hover={{ textDecoration: "none", color: activeColor }}
+    >
+      {label}
+    </Link>
+  );
 
   return (
     <>
-      {/* Fixed sidebar desktop */}
+      {/* Sidebar fijo (desktop) */}
       <Box
         position="fixed"
         top="0"
@@ -40,24 +56,19 @@ export default function Sidebar() {
         display={{ base: "none", md: "block" }}
         px={4}
         py={6}
+        zIndex={1000}
       >
         <VStack align="stretch" spacing={4}>
-          <Text fontWeight="bold" fontSize="lg" mb={2}>Óscar Álvarez</Text>
-          {SECTIONS.map(({ id, label }) => (
-            <Link
-              key={id}
-              onClick={() => scrollTo(id)}
-              fontWeight={activeId === id ? "bold" : "medium"}
-              color={activeId === id ? active : "inherit"}
-              _hover={{ textDecoration: "none", color: active }}
-            >
-              {label}
-            </Link>
+          <Text fontWeight="bold" fontSize="lg" mb={2}>
+            Óscar Álvarez
+          </Text>
+          {SECTIONS.map((s) => (
+            <Item key={s} label={s} />
           ))}
         </VStack>
       </Box>
 
-      {/* Mobile top bar */}
+      {/* Topbar móvil */}
       <HStack
         position="fixed"
         top="0"
@@ -89,16 +100,8 @@ export default function Sidebar() {
           <DrawerHeader>Navegación</DrawerHeader>
           <DrawerBody>
             <VStack align="stretch" spacing={4}>
-              {SECTIONS.map(({ id, label }) => (
-                <Link
-                  key={id}
-                  onClick={() => { scrollTo(id); onClose(); }}
-                  fontWeight={activeId === id ? "bold" : "medium"}
-                  color={activeId === id ? active : "inherit"}
-                  _hover={{ textDecoration: "none", color: active }}
-                >
-                  {label}
-                </Link>
+              {SECTIONS.map((s) => (
+                <Item key={s} label={s} />
               ))}
             </VStack>
           </DrawerBody>
