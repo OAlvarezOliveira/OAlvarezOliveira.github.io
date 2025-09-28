@@ -1,7 +1,5 @@
 // src/components/Projects.jsx
-import {
-  Box, Heading, Text, SimpleGrid, Stack, Link, Badge, useColorModeValue
-} from "@chakra-ui/react";
+import { Box, Heading, Text, SimpleGrid, Stack, Link, Badge } from "@chakra-ui/react";
 
 const projects = [
   {
@@ -21,9 +19,10 @@ const projects = [
 ];
 
 export default function Projects() {
-  const cardBg = useColorModeValue("white", "gray.800");
-  const border = useColorModeValue("gray.200", "gray.700");
-  const hoverBg = useColorModeValue("teal.50", "gray.700");
+  // Colores fijos compatibles con tu build actual
+  const cardBg = "white";
+  const border = "gray.200";
+  const hoverBg = "teal.50";
 
   return (
     <Box id="projects" px={{ base: 4, md: 8 }} py={10} maxW="1000px" mx="auto">
@@ -51,7 +50,9 @@ export default function Projects() {
               _hover={{ bg: hoverBg, transform: "translateY(-2px)" }}
             >
               <Heading size="md">{p.title}</Heading>
-              <Text fontSize="sm" color="gray.500">{p.desc}</Text>
+              <Text fontSize="sm" color="gray.500">
+                {p.desc}
+              </Text>
               <Stack direction="row" wrap="wrap" gap={2}>
                 {p.tags.map((t) => (
                   <Badge key={t} variant="subtle" colorScheme="blue">

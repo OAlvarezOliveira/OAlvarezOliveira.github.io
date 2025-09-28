@@ -1,37 +1,22 @@
 // src/components/Sidebar.jsx
-import {
-  Box,
-  VStack,
-  Link,
-  IconButton,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
-  useDisclosure,
-  useColorModeValue,
-  HStack,
-  Text,
-} from "@chakra-ui/react";
-import { Menu } from "lucide-react"; // usa el icono de lucide-react
+import { Box, VStack, Link, IconButton, HStack, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-// Ajusta aquí el orden/etiquetas del menú
 const SECTIONS = ["About", "TechStack", "Projects"];
 
 export default function Sidebar({ active, onSelect }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [open, setOpen] = useState(false);
 
-  const bg = useColorModeValue("gray.50", "gray.900");
-  const border = useColorModeValue("gray.200", "gray.700");
-  const activeColor = useColorModeValue("blue.600", "blue.300");
+  const bg = "gray.50";
+  const border = "gray.200";
+  const activeColor = "blue.600";
 
   const Item = ({ label }) => (
     <Link
       onClick={() => {
         onSelect(label);
-        onClose();
+        setOpen(false);
       }}
       fontWeight={active === label ? "bold" : "medium"}
       color={active === label ? activeColor : "inherit"}
@@ -85,28 +70,48 @@ export default function Sidebar({ active, onSelect }) {
       >
         <Text fontWeight="bold">Óscar Álvarez</Text>
         <IconButton
-          aria-label="Abrir menú"
-          icon={<Menu size={20} />}
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          icon={open ? <X size={20} /> : <Menu size={20} />}
           variant="ghost"
-          onClick={onOpen}
+          onClick={() => setOpen((v) => !v)}
         />
       </HStack>
 
-      {/* Drawer móvil */}
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>Navegación</DrawerHeader>
-          <DrawerBody>
+      {/* Overlay + panel móvil */}
+      {open && (
+        <>
+          <Box
+            position="fixed"
+            top="56px"
+            left="0"
+            right="0"
+            bottom="0"
+            bg="blackAlpha.400"
+            onClick={() => setOpen(false)}
+            zIndex={999}
+          />
+          <Box
+            position="fixed"
+            top="56px"
+            left="0"
+            w="75%"
+            maxW="260px"
+            bottom="0"
+            bg={bg}
+            borderRight="1px solid"
+            borderColor={border}
+            p={4}
+            zIndex={1000}
+            boxShadow="md"
+          >
             <VStack align="stretch" spacing={4}>
               {SECTIONS.map((s) => (
                 <Item key={s} label={s} />
               ))}
             </VStack>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+          </Box>
+        </>
+      )}
     </>
   );
 }

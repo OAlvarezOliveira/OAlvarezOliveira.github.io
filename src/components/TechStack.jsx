@@ -1,14 +1,12 @@
+// src/components/TechStack.jsx
+import { useState } from "react";
 import {
-  Box, Heading, Text, Tabs, TabList, TabPanels, Tab, TabPanel,
-  SimpleGrid, VStack, Icon, Link, useColorModeValue
+  Box, Heading, Text, SimpleGrid, VStack, Icon, Link, HStack, Button
 } from "@chakra-ui/react";
 import {
-  FaJava, FaPython, FaPhp, FaHtml5, FaCss3Alt,
-  FaAws, FaDocker, FaGithub, FaGitlab
+  FaJava, FaPython, FaPhp, FaHtml5, FaCss3Alt, FaAws, FaDocker, FaGithub, FaGitlab
 } from "react-icons/fa";
-import {
-  SiGooglecloud, SiKubernetes, SiTerraform, SiAnsible, SiJenkins, SiSelenium, SiTestcafe
-} from "react-icons/si";
+import { SiGooglecloud, SiKubernetes, SiTerraform, SiAnsible, SiJenkins, SiSelenium, SiTestcafe } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
 import { PiFileSqlThin } from "react-icons/pi";
 import { DiMysql } from "react-icons/di";
@@ -51,7 +49,7 @@ const CATEGORIES = [
     label: "Testing",
     items: [
       { name: "Selenium", icon: SiSelenium, url: "https://www.selenium.dev/" },
-      { name: "TestNG", icon: SiTestcafe, url: "https://testng.org/" }, // placeholder acordado
+      { name: "TestNG", icon: SiTestcafe, url: "https://testng.org/" },
     ],
   },
   {
@@ -66,56 +64,62 @@ const CATEGORIES = [
 ];
 
 export default function TechStack() {
-  const cardBg = useColorModeValue("white", "gray.800");
-  const cardBorder = useColorModeValue("gray.200", "gray.700");
-  const hoverBg = useColorModeValue("teal.50", "gray.700");
+  const [active, setActive] = useState("Languages");
+
+  const cardBg = "white";
+  const cardBorder = "gray.200";
+  const hoverBg = "teal.50";
 
   return (
     <Box id="techstack" px={{ base: 4, md: 8 }} py={10} maxW="1000px" mx="auto">
       <Heading mb={2}>Tech Stack</Heading>
-      <Text mb={8} color="gray.500">
+      <Text mb={6} color="gray.500">
         Estas son algunas de las tecnologías con las que trabajo a diario. Siempre aprendiendo y actualizando mi stack.
       </Text>
 
-      <Tabs variant="soft-rounded" colorScheme="blue">
-        <TabList overflowX="auto" pb={2}>
-          {CATEGORIES.map(c => (
-            <Tab key={c.key} mr={2}>{c.label}</Tab>
-          ))}
-        </TabList>
+      {/* Selector de categoría (sustituye Tabs) */}
+      <HStack spacing={2} mb={6} wrap="wrap">
+        {CATEGORIES.map(c => (
+          <Button
+            key={c.key}
+            size="sm"
+            variant={active === c.key ? "solid" : "outline"}
+            colorScheme="blue"
+            onClick={() => setActive(c.key)}
+          >
+            {c.label}
+          </Button>
+        ))}
+      </HStack>
 
-        <TabPanels>
-          {CATEGORIES.map(c => (
-            <TabPanel key={c.key} px={0}>
-              <SimpleGrid columns={[2, 3, 4]} spacing={5}>
-                {c.items.map(item => (
-                  <Link
-                    key={item.name}
-                    href={item.url}
-                    isExternal
-                    _hover={{ textDecoration: "none" }}
-                  >
-                    <VStack
-                      bg={cardBg}
-                      border="1px solid"
-                      borderColor={cardBorder}
-                      borderRadius="md"
-                      p={4}
-                      spacing={2}
-                      align="center"
-                      transition="all .2s ease"
-                      _hover={{ bg: hoverBg, transform: "translateY(-2px)" }}
-                    >
-                      {item.icon && <Icon as={item.icon} w={6} h={6} color="teal.500" />}
-                      <Text fontSize="sm" textAlign="center">{item.name}</Text>
-                    </VStack>
-                  </Link>
-                ))}
-              </SimpleGrid>
-            </TabPanel>
+      {/* Panel activo */}
+      {CATEGORIES.filter(c => c.key === active).map(c => (
+        <SimpleGrid key={c.key} columns={[2, 3, 4]} spacing={5}>
+          {c.items.map(item => (
+            <Link
+              key={item.name}
+              href={item.url}
+              isExternal
+              _hover={{ textDecoration: "none" }}
+            >
+              <VStack
+                bg={cardBg}
+                border="1px solid"
+                borderColor={cardBorder}
+                borderRadius="md"
+                p={4}
+                spacing={2}
+                align="center"
+                transition="all .2s ease"
+                _hover={{ bg: hoverBg, transform: "translateY(-2px)" }}
+              >
+                {item.icon && <Icon as={item.icon} w={6} h={6} color="teal.500" />}
+                <Text fontSize="sm" textAlign="center">{item.name}</Text>
+              </VStack>
+            </Link>
           ))}
-        </TabPanels>
-      </Tabs>
+        </SimpleGrid>
+      ))}
     </Box>
   );
 }
