@@ -1,13 +1,95 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>oalvarezoliveira.github.io</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oscar Álvarez Oliveira — Portafolio</title>
+  <meta name="description" content="Portafolio de Oscar Álvarez Oliveira. Frontend · React · UI." />
+  <meta name="theme-color" content="#0e0e10" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="sidebar" role="navigation" aria-label="Navegación principal">
+    <a class="brand" href="#home">
+      <img src="assets/foto.jpg" alt="Foto de Oscar" class="avatar" />
+      <div>
+        <h1>Oscar Álvarez Oliveira</h1>
+        <p>Frontend · React · UI</p>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="#about" data-nav>Sobre mí</a>
+      <a href="#projects" data-nav>Proyectos</a>
+      <a href="#skills" data-nav>Tech</a>
+      <a href="#contact" data-nav>Contacto</a>
+      <a class="cv" href="assets/cv.pdf" target="_blank" rel="noopener">Currículum</a>
+    </nav>
+    <div class="actions">
+      <button id="themeToggle" class="toggle" aria-label="Cambiar tema">🌙</button>
+    </div>
+  </aside>
+
+  <main id="home">
+    <section class="hero reveal" data-anim="fade-up">
+      <h2 class="display">Construyo interfaces <em>claras</em> y <em>rápidas</em>.</h2>
+      <p class="lead">Desarrollador frontend especializado en React y experiencias accesibles. Me enfoco en performance, semántica y buen diseño.</p>
+      <div class="cta">
+        <a class="btn" href="#projects">Ver proyectos</a>
+        <a class="link" href="assets/cv.pdf" target="_blank" rel="noopener">Descargar CV</a>
+      </div>
+    </section>
+    <section id="about" class="section reveal" data-anim="fade-up">
+      <h3>Sobre mí</h3>
+      <p>Soy Oscar, desarrollador frontend con experiencia en React, JavaScript y diseño web moderno. Disfruto crear interfaces usables, accesibles y estéticamente cuidadas. También trabajo con Node.js para completar proyectos full-stack.</p>
+    </section>
+    <section id="projects" class="section reveal" data-anim="fade-up">
+      <h3>Proyectos</h3>
+      <article class="card">
+        <div class="card-body">
+          <h4>Gestor de Tareas</h4>
+          <p>Aplicación web para organizar tareas con persistencia en localStorage y filtros dinámicos.</p>
+          <div class="tags">
+            <span>React</span><span>CSS</span><span>LocalStorage</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a class="link" href="#">Demo</a>
+          <a class="link" href="#">Código</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h4>Portafolio personal</h4>
+          <p>Sitio web profesional desarrollado con React + Vite, mostrando proyectos, CV y stack técnico.</p>
+          <div class="tags">
+            <span>Vite</span><span>React</span><span>UI</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a class="link" href="#">Demo</a>
+          <a class="link" href="#">Código</a>
+        </div>
+      </article>
+    </section>
+    <section id="skills" class="section reveal" data-anim="fade-up">
+      <h3>Tecnologías</h3>
+      <ul class="stack">
+        <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li>
+        <li>Vite</li><li>Node.js</li><li>Git/GitHub</li>
+      </ul>
+    </section>
+    <section id="contact" class="section reveal" data-anim="fade-up">
+      <h3>Contacto</h3>
+      <p>Puedes escribirme a:</p>
+      <a class="btn" href="mailto:tuemail@ejemplo.com">Enviar email</a>
+    </section>
+    <footer class="footer">
+      <p>© <span id="year"></span> Oscar Álvarez Oliveira · Hecho con ❤️ y café</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
 </html>
