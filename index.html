@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Óscar Álvarez Oliveira | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
-<body>
+
+<body class="dark">
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="profile">
-      <img src="assets/profile.jpg" alt="Óscar Álvarez Oliveira" class="profile-pic" onerror="this.style.display='none'"/>
-      <h2>Óscar</h2>
+      <img src="assets/profile.jpg" alt="Óscar Álvarez Oliveira" class="profile-pic"
+        onerror="this.style.display='none'" />
     </div>
 
     <nav class="side-nav">
       <ul>
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#techstack">Tech Stack</a></li>
-        <li><a href="#work">Proyectos</a></li>
+        <li><a href="#projects">Proyectos</a></li>
       </ul>
     </nav>
-
-    <!-- Botón de cambio de tema -->
-    <button id="themeToggle" class="theme-btn" aria-label="Cambiar tema">🌙</button>
   </aside>
 
-  <!-- Main -->
-  <main id="main">
-    <!-- Sobre mí -->
-    <section id="about" class="section reveal">
+  <!-- Contenido principal -->
+  <main>
+    <section id="about" class="section">
       <div class="container">
         <h1 class="title">Óscar Álvarez Oliveira</h1>
-        <h2 class="subtitle">Java Developer en formación</h2>
-        <p class="tagline">
-          Estudiante de DAM | En 12 meses: Developer Java + Testing | En 24 meses: QA Engineer Java & Laravel
-        </p>
+        <h2 class="subtitle glow">
+          Backend Developer en formación | QA & Testing
+        </h2>
         <p class="intro">
-          Tengo 42 años y una amplia experiencia laboral en distintos sectores.
-          Actualmente estoy cursando el Ciclo Superior de DAM mientras sigo un plan
-          intensivo de formación en desarrollo Java y testing. Mi objetivo es
-          convertirme en un desarrollador Java con conocimientos sólidos en QA,
-          aplicando mis habilidades previas en organización, comunicación y trabajo
-          en equipo a este nuevo camino profesional.
+          Construyo soluciones backend eficientes con Java y me especializo en
+          asegurar la calidad del software mediante testing automatizado,
+          buenas prácticas y mejora continua.<br /><br />
+          Disfruto aprender nuevas tecnologías, comprender cómo funcionan las
+          cosas por dentro y aplicar testing como herramienta para construir
+          productos más estables y confiables.<br /><br />
+          Busco oportunidades que me permitan seguir creciendo
+          profesionalmente, aportar a equipos colaborativos y participar en
+          proyectos donde la calidad del código y la mejora continua sean
+          valores fundamentales.
         </p>
       </div>
     </section>
-
-    <!-- Tech Stack -->
-    <section id="techstack" class="section reveal">
+    <!-- Techstack -->
+    <section id="techstack" class="section">
       <div class="container">
         <h2 class="section-title">Tech Stack</h2>
         <p class="section-desc">
-          Estas son algunas de las tecnologías con las que trabajo y estudio. Sigo aprendiendo y ampliando mi stack a diario.
+          Tecnologías con las que trabajo y sigo aprendiendo cada día, enfocadas en desarrollo backend, QA y entornos
+          cloud.
         </p>
 
         <div class="tabs">
@@ -63,83 +65,191 @@
           <button class="tab" data-target="tab-tools">Herramientas</button>
         </div>
 
+        <!-- Lenguajes -->
         <div id="tab-languages" class="tab-content active">
           <div class="stack-grid">
-            <div class="stack-item"><i class="devicon-java-plain"></i><span>Java</span></div>
-            <div class="stack-item"><i class="devicon-php-plain"></i><span>PHP</span></div>
-            <div class="stack-item"><i class="devicon-mysql-plain"></i><span>SQL</span></div>
-            <div class="stack-item"><i class="devicon-html5-plain"></i><span>HTML5</span></div>
-            <div class="stack-item"><i class="devicon-css3-plain"></i><span>CSS</span></div>
+            <a href="https://www.java.com" class="stack-item"><i
+                class="devicon-java-plain colored"></i><span>Java</span></a>
+            <a href="https://www.php.net" class="stack-item"><i
+                class="devicon-php-plain colored"></i><span>PHP</span></a>
+            <a href="https://www.mysql.com" class="stack-item"><i
+                class="devicon-mysql-plain colored"></i><span>SQL</span></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="stack-item"><i
+                class="devicon-javascript-plain colored"></i><span>JavaScript</span></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="stack-item"><i
+                class="devicon-html5-plain colored"></i><span>HTML5</span></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="stack-item"><i
+                class="devicon-css3-plain colored"></i><span>CSS3</span></a>
           </div>
         </div>
 
+        <!-- QA & Testing -->
         <div id="tab-qa" class="tab-content">
           <div class="stack-grid">
-            <div class="stack-item"><i class="devicon-selenium-original"></i><span>Selenium</span></div>
-            <div class="stack-item"><span>Appium</span></div>
-            <div class="stack-item"><span>JUnit</span></div>
-            <div class="stack-item"><span>Mockito</span></div>
-            <div class="stack-item"><span>TestNG</span></div>
+            <a href="https://www.selenium.dev/" class="stack-item"><i
+                class="devicon-chrome-plain"></i><span>Selenium</span></a>
+            <a href="https://appium.io/" class="stack-item"><i
+                class="devicon-android-plain colored"></i><span>Appium</span></a>
+            <a href="https://www.atlassian.com/software/jira" class="stack-item"><i
+                class="devicon-jira-plain colored"></i><span>Jira</span></a>
+            <a href="https://www.postman.com/" class="stack-item"><i
+                class="devicon-postman-plain colored"></i><span>Postman</span></a>
+            <a href="https://junit.org/" class="stack-item"><i class="devicon-java-plain"></i><span>JUnit</span></a>
           </div>
         </div>
 
+        <!-- DevOps & Cloud -->
         <div id="tab-devops" class="tab-content">
           <div class="stack-grid">
-            <div class="stack-item"><i class="devicon-jenkins-plain"></i><span>Jenkins</span></div>
-            <div class="stack-item"><i class="devicon-docker-plain"></i><span>Docker</span></div>
-            <div class="stack-item"><span>LXC</span></div>
-            <div class="stack-item"><i class="devicon-kubernetes-plain"></i><span>Kubernetes</span></div>
-            <div class="stack-item"><i class="devicon-terraform-plain"></i><span>Terraform</span></div>
-            <div class="stack-item"><i class="devicon-ansible-plain"></i><span>Ansible</span></div>
+            <a href="https://azure.microsoft.com/" class="stack-item"><i
+                class="devicon-azure-plain colored"></i><span>Azure</span></a>
+            <a href="https://aws.amazon.com/" class="stack-item">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazonaws.svg" alt="AWS" width="40"
+                height="40">
+              <span>AWS</span></a>
+            <a href="https://www.jenkins.io/" class="stack-item"><i
+                class="devicon-jenkins-plain colored"></i><span>Jenkins</span></a>
+            <a href="https://www.docker.com/" class="stack-item"><i
+                class="devicon-docker-plain colored"></i><span>Docker</span></a>
+            <a href="https://kubernetes.io/" class="stack-item"><i
+                class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span></a>
+            <a href="https://www.ansible.com/" class="stack-item"><i
+                class="devicon-ansible-plain colored"></i><span>Ansible</span></a>
+            <a href="https://www.terraform.io/" class="stack-item"><i
+                class="devicon-terraform-plain colored"></i><span>Terraform</span></a>
           </div>
         </div>
 
+        <!-- Herramientas -->
         <div id="tab-tools" class="tab-content">
           <div class="stack-grid">
-            <div class="stack-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
-            <div class="stack-item"><i class="devicon-gitlab-plain"></i><span>GitLab</span></div>
-            <div class="stack-item"><i class="devicon-bash-plain"></i><span>Bash</span></div>
+            <a href="https://git-scm.com/" class="stack-item"><i
+                class="devicon-git-plain colored"></i><span>Git</span></a>
+            <a href="https://github.com/" class="stack-item"><i
+                class="devicon-github-original"></i><span>GitHub</span></a>
+            <a href="https://www.gnu.org/software/bash/" class="stack-item"><i class="devicon-bash-plain"
+                style="color:#00e676"></i><span>Bash</span></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Proyectos -->
-    <section id="work" class="section reveal">
-      <div class="container">
-        <h2 class="section-title">Proyectos</h2>
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">Proyectos</h2>
+    <p class="section-desc">
+      Algunos proyectos en los que he trabajado, enfocados en backend,
+      automatización, QA y despliegue en la nube.
+    </p>
 
-        <div class="projects">
-          <div class="project-card">
-            <h4>casopractico2</h4>
-            <p>Infraestructura y despliegue automatizado en Microsoft Azure.</p>
-            <a href="https://github.com/OAlvarezOliveira/casopractico2" target="_blank">Ver en GitHub</a>
-          </div>
+    <div class="projects">
 
-          <div class="project-card">
-            <h4>todo-list-aws</h4>
-            <p>Aplicación ToDo en AWS con SAM + Jenkins y pipelines CI/CD.</p>
-            <a href="https://github.com/OAlvarezOliveira/todo-list-aws" target="_blank">Ver en GitHub</a>
-          </div>
+      <!-- Proyecto 1 -->
+      <div class="project-card">
+        <h4>Despliegue Cloud Automatizado en Azure</h4>
+        <div class="tech-icons">
+          <i class="devicon-terraform-plain colored" title="Terraform"></i>
+          <i class="devicon-ansible-plain colored" title="Ansible"></i>
+          <i class="devicon-azure-plain colored" title="Azure"></i>
+          <i class="devicon-kubernetes-plain colored" title="Kubernetes"></i>
         </div>
+        <p>
+          Infraestructura automatizada en <strong>Microsoft Azure</strong> usando
+          <strong>Terraform</strong> para aprovisionamiento, <strong>Ansible</strong>
+          para configuración y <strong>Kubernetes</strong> para orquestación.
+          Enfocado en prácticas de <strong>Infraestructura como Código (IaC)</strong>.
+        </p>
+        <a
+          href="https://github.com/OAlvarezOliveira/despliegue-cloud-automatizado"
+          target="_blank"
+          class="btn secondary"
+          >Ver en GitHub</a
+        >
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-left">
-        <p>Built with ❤️ using HTML, CSS & JavaScript</p>
-        <p>© <span id="year"></span> Óscar Álvarez Oliveira. All Rights Reserved.</p>
+      <!-- Proyecto 2 -->
+      <div class="project-card">
+        <h4>ToDo List AWS — CI/CD con SAM y Jenkins</h4>
+        <div class="tech-icons">
+          <i class="devicon-aws-plain colored" title="AWS"></i>
+          <i class="devicon-jenkins-plain colored" title="Jenkins"></i>
+          <i class="devicon-docker-plain colored" title="Docker"></i>
+        </div>
+        <p>
+          Aplicación <strong>API RESTful</strong> serverless construida con
+          <strong>AWS SAM</strong> e integrada en pipelines de
+          <strong>Jenkins</strong> para <strong>CI/CD</strong> automatizado.
+          Permite despliegue ágil en entornos cloud.
+        </p>
+        <a
+          href="https://github.com/OAlvarezOliveira/todo-list-aws"
+          target="_blank"
+          class="btn secondary"
+          >Ver en GitHub</a
+        >
       </div>
-      <div class="footer-right">
-        <a href="https://github.com/OAlvarezOliveira" target="_blank" class="social"><i class="devicon-github-original"></i></a>
-        <a href="https://www.linkedin.com/in/oscar-alvarez-oliveira-462877241/" target="_blank" class="social"><i class="devicon-linkedin-plain"></i></a>
-        <a href="mailto:oalvarezoliveira@gmail.com" class="social">✉️</a>
-        <a href="assets/CV.pdf" target="_blank" class="social">📄</a>
+
+      <!-- Proyecto 3 -->
+      <div class="project-card">
+        <h4>WooCommerce Engel Integration</h4>
+        <div class="tech-icons">
+          <i class="devicon-php-plain colored" title="PHP"></i>
+          <i class="devicon-wordpress-plain colored" title="WooCommerce"></i>
+          <i class="devicon-mysql-plain colored" title="MySQL"></i>
+        </div>
+        <p>
+          Plugin para <strong>WooCommerce</strong> que integra la API del proveedor Engel:
+          importación automática de productos desde CSV, sincronización de catálogo y
+          gestión de pedidos con seguimiento. Desarrollado con <strong>PHP</strong> y
+          <strong>MySQL</strong>.
+        </p>
+        <a
+          href="https://github.com/OAlvarezOliveira/woocommerce-engel-integration"
+          target="_blank"
+          class="btn secondary"
+          >Ver en GitHub</a
+        >
       </div>
-    </footer>
+
+      <!-- Proyecto 4 -->
+      <div class="project-card">
+        <h4>Pruebas Automatizadas con Selenium</h4>
+        <div class="tech-icons">
+          <i class="devicon-java-plain colored" title="Java"></i>
+          <i class="devicon-selenium-plain colored" title="Selenium"></i>
+          <i class="devicon-junit-plain" title="JUnit"></i>
+        </div>
+        <p>
+          Suite de pruebas E2E desarrollada en <strong>Java</strong> utilizando
+          <strong>Selenium WebDriver</strong> y <strong>JUnit</strong> para validar
+          flujos críticos en aplicaciones web. Incluye ejecución automatizada y
+          reportes detallados de resultados.
+        </p>
+        <a
+          href="https://github.com/OAlvarezOliveira/Selenium"
+          target="_blank"
+          class="btn secondary"
+          >Ver en GitHub</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
   </main>
+
+  <!-- Footer flotante -->
+  <footer class="footer-fixed">
+    <a href="https://github.com/OAlvarezOliveira" target="_blank" class="social"><i
+        class="devicon-github-original"></i></a>
+    <a href="https://www.linkedin.com/in/oscar-alvarez-oliveira-462877241/" target="_blank" class="social"><i
+        class="devicon-linkedin-plain"></i></a>
+    <a href="mailto:oalvarezoliveira@gmail.com" class="social">✉️</a>
+    <a href="assets/CV.pdf" target="_blank" class="social">📄</a>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>

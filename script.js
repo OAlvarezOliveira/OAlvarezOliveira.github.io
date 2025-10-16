@@ -1,64 +1,43 @@
-// Año en footer
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-// Reveal
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in-view');
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-// Tema claro/oscuro (dark por defecto)
-const root = document.documentElement;
-const toggle = document.getElementById('themeToggle');
-const saved = localStorage.getItem('theme');
-
-if (saved === 'light') {
-  root.classList.add('light');
-  root.classList.remove('dark');
-  toggle.textContent = '☀️';
-} else {
-  root.classList.add('dark');
-  root.classList.remove('light');
-  toggle.textContent = '🌙';
-}
-
-toggle.addEventListener('click', () => {
-  if (root.classList.contains('light')) {
-    root.classList.remove('light');
-    root.classList.add('dark');
-    toggle.textContent = '🌙';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    root.classList.remove('dark');
-    root.classList.add('light');
-    toggle.textContent = '☀️';
-    localStorage.setItem('theme', 'light');
-  }
+/* Cambio de tema */
+const body = document.body;
+const themeBtn = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) body.className = savedTheme;
+themeBtn.addEventListener("click", () => {
+  body.classList.toggle("light");
+  body.classList.toggle("dark");
+  localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
 });
 
-// Tabs Tech Stack
-const tabs = document.querySelectorAll('.tab');
-const panes = document.querySelectorAll('.tab-content');
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    panes.forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.target).classList.add('active');
-  });
-});
-
-// Scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
+/* Navegación lateral */
+const navLinks = document.querySelectorAll('.side-nav a');
+const sections = document.querySelectorAll('main section');
+navLinks.forEach(link=>{
+  link.addEventListener('click',e=>{
     e.preventDefault();
-    const el = document.querySelector(a.getAttribute('href'));
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(sec=>{
+    const top=window.scrollY;
+    if(top>=sec.offsetTop-200) current=sec.id;
+  });
+  navLinks.forEach(l=>{
+    l.classList.remove('active');
+    if(l.getAttribute('href')==='#'+current) l.classList.add('active');
+  });
+});
+/* Tabs del Tech Stack */
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    tabs.forEach((t) => t.classList.remove("active"));
+    contents.forEach((c) => c.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.target).classList.add("active");
   });
 });
