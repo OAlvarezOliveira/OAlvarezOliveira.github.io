@@ -1,43 +1,167 @@
-/* Cambio de tema */
+/* =========================================
+   🎨 CAMBIO DE TEMA (con transición suave)
+========================================= */
 const body = document.body;
 const themeBtn = document.getElementById("themeToggle");
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) body.className = savedTheme;
+
+body.style.transition = "background 0.25s ease, color 0.25s ease";
+
+const savedTheme = localStorage.getItem("theme") || "dark";
+body.className = savedTheme;
+
+themeBtn.textContent = savedTheme === "dark" ? "🌙" : "☀️";
+
 themeBtn.addEventListener("click", () => {
   body.classList.toggle("light");
   body.classList.toggle("dark");
-  localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
+
+  const newTheme = body.classList.contains("dark") ? "dark" : "light";
+  localStorage.setItem("theme", newTheme);
+
+  themeBtn.textContent = newTheme === "dark" ? "🌙" : "☀️";
 });
 
-/* Navegación lateral */
-const navLinks = document.querySelectorAll('.side-nav a');
+/* =========================================
+   🧭 NAVEGACIÓN — SCROLL SUAVE REAL
+========================================= */
+const sideNavLinks = document.querySelectorAll('.side-nav a');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+const allNavLinks = [...sideNavLinks, ...mobileNavLinks];
+
+function smoothScrollTo(e) {
+  e.preventDefault();
+
+  const targetId = this.getAttribute('href');
+  const targetSection = document.querySelector(targetId);
+  if (!targetSection) return;
+
+  let offset = 0;
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  if (window.innerWidth <= 768 && mobileNav) {
+    offset = mobileNav.offsetHeight + 10; 
+  }
+
+  const elementPosition = targetSection.offsetTop;
+  const offsetPosition = elementPosition - offset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
+}
+
+// Sidebar
+sideNavLinks.forEach(link => {
+  link.addEventListener('click', smoothScrollTo);
+});
+
+// Móvil (cierra menú)
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    smoothScrollTo.call(this, e);
+
+    if (window.innerWidth <= 768) {
+      const mobileNav = document.querySelector('.mobile-nav');
+      mobileNav.style.transform = 'translateY(-100%)';
+    }
+  });
+});
+
+/* =========================================
+   ✨ HIGHLIGHT SECCIÓN ACTIVA
+========================================= */
 const sections = document.querySelectorAll('main section');
-navLinks.forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-  });
-});
-window.addEventListener('scroll',()=>{
-  let current='';
-  sections.forEach(sec=>{
-    const top=window.scrollY;
-    if(top>=sec.offsetTop-200) current=sec.id;
-  });
-  navLinks.forEach(l=>{
-    l.classList.remove('active');
-    if(l.getAttribute('href')==='#'+current) l.classList.add('active');
-  });
-});
-/* Tabs del Tech Stack */
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".tab-content");
 
-tabs.forEach((tab) => {
+function highlightActiveSection() {
+  let current = '';
+  const scrollPosition = window.scrollY;
+
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const offset = window.innerWidth <= 768 ? 100 : 200;
+
+    if (scrollPosition >= top - offset && scrollPosition < top + height - offset) {
+      current = section.id;
+    }
+  });
+
+  if (!current && scrollPosition < 100) {
+    current = sections[0].id;
+  }
+
+  allNavLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+}
+
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+  scrollTimeout = requestAnimationFrame(highlightActiveSection);
+});
+
+window.addEventListener('load', highlightActiveSection);
+
+/* =========================================
+   📑 TABS
+========================================= */
+const tabs = document.querySelectorAll(".tab");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab => {
   tab.addEventListener("click", () => {
-    tabs.forEach((t) => t.classList.remove("active"));
-    contents.forEach((c) => c.classList.remove("active"));
+    tabs.forEach(t => t.classList.remove("active"));
+    tabContents.forEach(c => c.classList.remove("active"));
+
     tab.classList.add("active");
-    document.getElementById(tab.dataset.target).classList.add("active");
+    const targetContent = document.getElementById(tab.dataset.target);
+    if (targetContent) targetContent.classList.add("active");
   });
 });
+
+/* =========================================
+   📱 MENU DESLIZANTE MÓVIL
+========================================= */
+let lastScroll = 0;
+const mobileNav = document.querySelector('.mobile-nav');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+
+  if (window.innerWidth <= 768) {
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      mobileNav.style.transform = 'translateY(-100%)';
+    } else {
+      mobileNav.style.transform = 'translateY(0)';
+    }
+  }
+
+  lastScroll = currentScroll;
+});
+
+/* =========================================
+   ⚡ LAZY LOADING DE IMÁGENES
+========================================= */
+if ('IntersectionObserver' in window) {
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          observer.unobserve(img);
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    imageObserver.observe(img);
+  });
+}

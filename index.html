@@ -1,255 +1,234 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Óscar Álvarez Oliveira | Portfolio</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Óscar Álvarez Oliveira | Portfolio</title>
+    <!-- 🔥 SEO / OPEN GRAPH -->
+    <meta name="description" content="Portfolio profesional de Óscar Álvarez Oliveira — Backend, QA, Testing Automatizado y DevOps. Proyectos de Java, Selenium, Docker, Azure, Terraform y más.">
+    <meta property="og:title" content="Óscar Álvarez Oliveira – Backend & QA Portfolio">
+    <meta property="og:description" content="Desarrollo Backend, QA, Testing Automatizado, CI/CD y DevOps.">
+    <meta property="og:image" content="assets/preview.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oalvarezoliveira.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/devicon.min.css"/>
-</head>
+    <!-- 🔥 Preconnect para acelerar iconos -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-<body class="dark">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="profile">
-      <img src="assets/profile.jpg" alt="Óscar Álvarez Oliveira" class="profile-pic"
-        onerror="this.style.display='none'" />
-    </div>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/devicon.min.css" />
+  </head>
 
-    <nav class="side-nav">
-      <ul>
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#techstack">Tech Stack</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-      </ul>
+  <body class="dark">
+
+    <!-- ========================================================
+       📱 MENÚ MÓVIL (con accesibilidad)
+    ========================================================== -->
+    <nav class="mobile-nav" aria-label="Navegación móvil">
+      <a href="#about">Sobre mí</a>
+      <a href="#techstack">Tech Stack</a>
+      <a href="#projects">Proyectos</a>
     </nav>
-  </aside>
 
-  <!-- Contenido principal -->
-  <main>
-    <section id="about" class="section">
-      <div class="container">
-        <h1 class="title">Óscar Álvarez Oliveira</h1>
-        <h2 class="subtitle glow">
-          Backend Developer en formación | QA & Testing
-        </h2>
-        <p class="intro">
-          Construyo soluciones backend eficientes con Java y me especializo en
-          asegurar la calidad del software mediante testing automatizado,
-          buenas prácticas y mejora continua.<br /><br />
-          Disfruto aprender nuevas tecnologías, comprender cómo funcionan las
-          cosas por dentro y aplicar testing como herramienta para construir
-          productos más estables y confiables.<br /><br />
-          Busco oportunidades que me permitan seguir creciendo
-          profesionalmente, aportar a equipos colaborativos y participar en
-          proyectos donde la calidad del código y la mejora continua sean
-          valores fundamentales.
-        </p>
+    <!-- ========================================================
+       🧭 SIDEBAR DESKTOP
+    ========================================================== -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="assets/profile.jpg" 
+             alt="Foto de Óscar Álvarez Oliveira" 
+             class="profile-pic"
+             onerror="this.style.display='none'" />
       </div>
-    </section>
-    <!-- Techstack -->
-    <section id="techstack" class="section">
-      <div class="container">
-        <h2 class="section-title">Tech Stack</h2>
-        <p class="section-desc">
-          Tecnologías con las que trabajo y sigo aprendiendo cada día, enfocadas en desarrollo backend, QA y entornos
-          cloud.
-        </p>
 
-        <div class="tabs">
-          <button class="tab active" data-target="tab-languages">Lenguajes</button>
-          <button class="tab" data-target="tab-qa">QA & Testing</button>
-          <button class="tab" data-target="tab-devops">DevOps & Cloud</button>
-          <button class="tab" data-target="tab-tools">Herramientas</button>
+      <nav class="side-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#techstack">Tech Stack</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ========================================================
+       🏠 MAIN CONTENT
+    ========================================================== -->
+    <main>
+
+      <!-- ============================ -->
+      <!-- 🔥 HERO / SOBRE MÍ -->
+      <!-- ============================ -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          
+          <h1 id="about-title" class="title">Óscar Álvarez Oliveira</h1>
+          <h2 class="subtitle glow">Backend Developer en formación | QA & Testing</h2>
+
+          <!-- BOTONES CTA -->
+          <div class="hero-buttons">
+            <a href="#projects" class="btn">Ver Proyectos</a>
+            <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Descargar CV</a>
+          </div>
+
+          <p class="intro">
+            Construyo soluciones backend eficientes con Java y me especializo en testing automatizado,
+            QA, buenas prácticas y mejora continua. Me apasiona aprender, optimizar procesos y aplicar
+            metodologías profesionales para garantizar software estable y escalable.
+          </p>
         </div>
+      </section>
 
-        <!-- Lenguajes -->
-        <div id="tab-languages" class="tab-content active">
-          <div class="stack-grid">
-            <a href="https://www.java.com" class="stack-item"><i
-                class="devicon-java-plain colored"></i><span>Java</span></a>
-            <a href="https://www.php.net" class="stack-item"><i
-                class="devicon-php-plain colored"></i><span>PHP</span></a>
-            <a href="https://www.mysql.com" class="stack-item"><i
-                class="devicon-mysql-plain colored"></i><span>SQL</span></a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="stack-item"><i
-                class="devicon-javascript-plain colored"></i><span>JavaScript</span></a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="stack-item"><i
-                class="devicon-html5-plain colored"></i><span>HTML5</span></a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="stack-item"><i
-                class="devicon-css3-plain colored"></i><span>CSS3</span></a>
+      <!-- ============================ -->
+      <!-- ⚙️ TECH STACK -->
+      <!-- ============================ -->
+      <section id="techstack" class="section" aria-labelledby="techstack-title">
+        <div class="container">
+          
+          <h2 id="techstack-title" class="section-title">Tech Stack</h2>
+          <p class="section-desc">Tecnologías principales de desarrollo backend, QA, automatización y entornos cloud.</p>
+
+          <!-- Tabs -->
+          <div class="tabs">
+            <button class="tab active" data-target="tab-languages">Lenguajes</button>
+            <button class="tab" data-target="tab-qa">QA & Testing</button>
+            <button class="tab" data-target="tab-devops">DevOps & Cloud</button>
+            <button class="tab" data-target="tab-tools">Herramientas</button>
+          </div>
+
+          <!-- LENGUAJES -->
+          <div id="tab-languages" class="tab-content active">
+            <div class="stack-grid">
+              <a href="https://www.java.com" class="stack-item" aria-label="Java"><i class="devicon-java-plain colored" aria-hidden="true"></i><span>Java</span></a>
+              <a href="https://www.php.net" class="stack-item" aria-label="PHP"><i class="devicon-php-plain colored" aria-hidden="true"></i><span>PHP</span></a>
+              <a href="https://www.mysql.com" class="stack-item" aria-label="SQL / MySQL"><i class="devicon-mysql-plain colored" aria-hidden="true"></i><span>SQL</span></a>
+              <a href="https://developer.mozilla.org/docs/Web/JavaScript" class="stack-item" aria-label="JavaScript"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span>JavaScript</span></a>
+              <a href="https://developer.mozilla.org/docs/Web/HTML" class="stack-item" aria-label="HTML5"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML5</span></a>
+              <a href="https://developer.mozilla.org/docs/Web/CSS" class="stack-item" aria-label="CSS3"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span>CSS3</span></a>
+            </div>
+          </div>
+
+          <!-- QA -->
+          <div id="tab-qa" class="tab-content">
+            <div class="stack-grid">
+              <a href="https://www.selenium.dev" class="stack-item" aria-label="Selenium"><i class="devicon-chrome-plain" aria-hidden="true"></i><span>Selenium</span></a>
+              <a href="https://appium.io" class="stack-item" aria-label="Appium"><i class="devicon-android-plain colored" aria-hidden="true"></i><span>Appium</span></a>
+              <a href="https://www.atlassian.com/software/jira" class="stack-item" aria-label="Jira"><i class="devicon-jira-plain colored" aria-hidden="true"></i><span>Jira</span></a>
+              <a href="https://www.postman.com" class="stack-item" aria-label="Postman"><i class="devicon-postman-plain colored" aria-hidden="true"></i><span>Postman</span></a>
+              <a href="https://junit.org" class="stack-item" aria-label="JUnit"><i class="devicon-java-plain" aria-hidden="true"></i><span>JUnit</span></a>
+            </div>
+          </div>
+
+          <!-- DEVOPS -->
+          <div id="tab-devops" class="tab-content">
+            <div class="stack-grid">
+              <a href="https://azure.microsoft.com" class="stack-item" aria-label="Azure"><i class="devicon-azure-plain colored" aria-hidden="true"></i><span>Azure</span></a>
+              <a href="https://aws.amazon.com" class="stack-item" aria-label="AWS">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazonaws.svg" height="40" width="40" aria-hidden="true">
+                <span>AWS</span>
+              </a>
+              <a href="https://www.jenkins.io" class="stack-item" aria-label="Jenkins"><i class="devicon-jenkins-plain colored" aria-hidden="true"></i><span>Jenkins</span></a>
+              <a href="https://www.docker.com" class="stack-item" aria-label="Docker"><i class="devicon-docker-plain colored" aria-hidden="true"></i><span>Docker</span></a>
+              <a href="https://kubernetes.io" class="stack-item" aria-label="Kubernetes"><i class="devicon-kubernetes-plain colored" aria-hidden="true"></i><span>Kubernetes</span></a>
+              <a href="https://www.ansible.com" class="stack-item" aria-label="Ansible"><i class="devicon-ansible-plain colored" aria-hidden="true"></i><span>Ansible</span></a>
+              <a href="https://www.terraform.io" class="stack-item" aria-label="Terraform"><i class="devicon-terraform-plain colored" aria-hidden="true"></i><span>Terraform</span></a>
+            </div>
+          </div>
+
+          <!-- HERRAMIENTAS -->
+          <div id="tab-tools" class="tab-content">
+            <div class="stack-grid">
+              <a href="https://git-scm.com" class="stack-item" aria-label="Git"><i class="devicon-git-plain colored" aria-hidden="true"></i><span>Git</span></a>
+              <a href="https://github.com" class="stack-item" aria-label="GitHub"><i class="devicon-github-original" aria-hidden="true"></i><span>GitHub</span></a>
+              <a href="https://www.gnu.org/software/bash" class="stack-item" aria-label="Bash"><i class="devicon-bash-plain" style="color:#00e676" aria-hidden="true"></i><span>Bash</span></a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================ -->
+      <!-- 💼 PROYECTOS -->
+      <!-- ============================ -->
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="container">
+          
+          <h2 id="projects-title" class="section-title">Proyectos</h2>
+          <p class="section-desc">Proyectos enfocados en backend, automatización, QA y despliegue cloud.</p>
+
+          <div class="projects">
+
+            <div class="project-card">
+              <h4>Despliegue Cloud Automatizado en Azure</h4>
+              <div class="tech-icons">
+                <i class="devicon-terraform-plain colored"></i>
+                <i class="devicon-ansible-plain colored"></i>
+                <i class="devicon-azure-plain colored"></i>
+                <i class="devicon-kubernetes-plain colored"></i>
+              </div>
+              <p>Infraestructura automatizada en Azure usando Terraform, Ansible y Kubernetes. Enfoque DevOps e IaC.</p>
+              <a href="https://github.com/OAlvarezOliveira/despliegue-cloud-automatizado"
+                 target="_blank" rel="noopener noreferrer" 
+                 class="btn secondary">Ver en GitHub</a>
+            </div>
+
+            <div class="project-card">
+              <h4>ToDo List AWS — CI/CD con SAM y Jenkins</h4>
+              <div class="tech-icons">
+                <i class="devicon-aws-plain colored"></i>
+                <i class="devicon-jenkins-plain colored"></i>
+                <i class="devicon-docker-plain colored"></i>
+              </div>
+              <p>API REST serverless desplegada con AWS SAM e integrada en pipelines CI/CD con Jenkins.</p>
+              <a href="https://github.com/OAlvarezOliveira/todo-list-aws"
+                 target="_blank" rel="noopener noreferrer" 
+                 class="btn secondary">Ver en GitHub</a>
+            </div>
+
+            <div class="project-card">
+              <h4>WooCommerce Engel Integration</h4>
+              <div class="tech-icons">
+                <i class="devicon-php-plain colored"></i>
+                <i class="devicon-wordpress-plain colored"></i>
+                <i class="devicon-mysql-plain colored"></i>
+              </div>
+              <p>Plugin WooCommerce para importar productos, sincronizar catálogo y gestionar pedidos.</p>
+              <a href="https://github.com/OAlvarezOliveira/woocommerce-engel-integration"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn secondary">Ver en GitHub</a>
+            </div>
+
+            <div class="project-card">
+              <h4>Pruebas Automatizadas con Selenium</h4>
+              <div class="tech-icons">
+                <i class="devicon-java-plain colored"></i>
+                <i class="devicon-selenium-plain colored"></i>
+                <i class="devicon-junit-plain"></i>
+              </div>
+              <p>Suite de pruebas E2E con Java, Selenium WebDriver y JUnit. Automatización de flujos críticos.</p>
+              <a href="https://github.com/OAlvarezOliveira/Selenium"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn secondary">Ver en GitHub</a>
+            </div>
+
           </div>
         </div>
+      </section>
 
-        <!-- QA & Testing -->
-        <div id="tab-qa" class="tab-content">
-          <div class="stack-grid">
-            <a href="https://www.selenium.dev/" class="stack-item"><i
-                class="devicon-chrome-plain"></i><span>Selenium</span></a>
-            <a href="https://appium.io/" class="stack-item"><i
-                class="devicon-android-plain colored"></i><span>Appium</span></a>
-            <a href="https://www.atlassian.com/software/jira" class="stack-item"><i
-                class="devicon-jira-plain colored"></i><span>Jira</span></a>
-            <a href="https://www.postman.com/" class="stack-item"><i
-                class="devicon-postman-plain colored"></i><span>Postman</span></a>
-            <a href="https://junit.org/" class="stack-item"><i class="devicon-java-plain"></i><span>JUnit</span></a>
-          </div>
-        </div>
+    </main>
 
-        <!-- DevOps & Cloud -->
-        <div id="tab-devops" class="tab-content">
-          <div class="stack-grid">
-            <a href="https://azure.microsoft.com/" class="stack-item"><i
-                class="devicon-azure-plain colored"></i><span>Azure</span></a>
-            <a href="https://aws.amazon.com/" class="stack-item">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazonaws.svg" alt="AWS" width="40"
-                height="40">
-              <span>AWS</span></a>
-            <a href="https://www.jenkins.io/" class="stack-item"><i
-                class="devicon-jenkins-plain colored"></i><span>Jenkins</span></a>
-            <a href="https://www.docker.com/" class="stack-item"><i
-                class="devicon-docker-plain colored"></i><span>Docker</span></a>
-            <a href="https://kubernetes.io/" class="stack-item"><i
-                class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span></a>
-            <a href="https://www.ansible.com/" class="stack-item"><i
-                class="devicon-ansible-plain colored"></i><span>Ansible</span></a>
-            <a href="https://www.terraform.io/" class="stack-item"><i
-                class="devicon-terraform-plain colored"></i><span>Terraform</span></a>
-          </div>
-        </div>
+    <!-- ========================================================
+       👣 FOOTER
+    ========================================================== -->
+    <footer class="footer-fixed">
+      <a href="https://github.com/OAlvarezOliveira" target="_blank" rel="noopener noreferrer" class="social" aria-label="GitHub"><i class="devicon-github-original"></i></a>
+      <a href="https://www.linkedin.com/in/oscar-alvarez-oliveira-462877241/" target="_blank" rel="noopener noreferrer" class="social" aria-label="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
+      <a href="mailto:oalvarezoliveira@gmail.com" class="social" aria-label="Email">✉️</a>
+      <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="social" aria-label="CV">📄</a>
+      <button id="themeToggle" class="theme-btn" aria-label="Cambiar tema">🌙</button>
+    </footer>
 
-        <!-- Herramientas -->
-        <div id="tab-tools" class="tab-content">
-          <div class="stack-grid">
-            <a href="https://git-scm.com/" class="stack-item"><i
-                class="devicon-git-plain colored"></i><span>Git</span></a>
-            <a href="https://github.com/" class="stack-item"><i
-                class="devicon-github-original"></i><span>GitHub</span></a>
-            <a href="https://www.gnu.org/software/bash/" class="stack-item"><i class="devicon-bash-plain"
-                style="color:#00e676"></i><span>Bash</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<section id="projects" class="section">
-  <div class="container">
-    <h2 class="section-title">Proyectos</h2>
-    <p class="section-desc">
-      Algunos proyectos en los que he trabajado, enfocados en backend,
-      automatización, QA y despliegue en la nube.
-    </p>
-
-    <div class="projects">
-
-      <!-- Proyecto 1 -->
-      <div class="project-card">
-        <h4>Despliegue Cloud Automatizado en Azure</h4>
-        <div class="tech-icons">
-          <i class="devicon-terraform-plain colored" title="Terraform"></i>
-          <i class="devicon-ansible-plain colored" title="Ansible"></i>
-          <i class="devicon-azure-plain colored" title="Azure"></i>
-          <i class="devicon-kubernetes-plain colored" title="Kubernetes"></i>
-        </div>
-        <p>
-          Infraestructura automatizada en <strong>Microsoft Azure</strong> usando
-          <strong>Terraform</strong> para aprovisionamiento, <strong>Ansible</strong>
-          para configuración y <strong>Kubernetes</strong> para orquestación.
-          Enfocado en prácticas de <strong>Infraestructura como Código (IaC)</strong>.
-        </p>
-        <a
-          href="https://github.com/OAlvarezOliveira/despliegue-cloud-automatizado"
-          target="_blank"
-          class="btn secondary"
-          >Ver en GitHub</a
-        >
-      </div>
-
-      <!-- Proyecto 2 -->
-      <div class="project-card">
-        <h4>ToDo List AWS — CI/CD con SAM y Jenkins</h4>
-        <div class="tech-icons">
-          <i class="devicon-aws-plain colored" title="AWS"></i>
-          <i class="devicon-jenkins-plain colored" title="Jenkins"></i>
-          <i class="devicon-docker-plain colored" title="Docker"></i>
-        </div>
-        <p>
-          Aplicación <strong>API RESTful</strong> serverless construida con
-          <strong>AWS SAM</strong> e integrada en pipelines de
-          <strong>Jenkins</strong> para <strong>CI/CD</strong> automatizado.
-          Permite despliegue ágil en entornos cloud.
-        </p>
-        <a
-          href="https://github.com/OAlvarezOliveira/todo-list-aws"
-          target="_blank"
-          class="btn secondary"
-          >Ver en GitHub</a
-        >
-      </div>
-
-      <!-- Proyecto 3 -->
-      <div class="project-card">
-        <h4>WooCommerce Engel Integration</h4>
-        <div class="tech-icons">
-          <i class="devicon-php-plain colored" title="PHP"></i>
-          <i class="devicon-wordpress-plain colored" title="WooCommerce"></i>
-          <i class="devicon-mysql-plain colored" title="MySQL"></i>
-        </div>
-        <p>
-          Plugin para <strong>WooCommerce</strong> que integra la API del proveedor Engel:
-          importación automática de productos desde CSV, sincronización de catálogo y
-          gestión de pedidos con seguimiento. Desarrollado con <strong>PHP</strong> y
-          <strong>MySQL</strong>.
-        </p>
-        <a
-          href="https://github.com/OAlvarezOliveira/woocommerce-engel-integration"
-          target="_blank"
-          class="btn secondary"
-          >Ver en GitHub</a
-        >
-      </div>
-
-      <!-- Proyecto 4 -->
-      <div class="project-card">
-        <h4>Pruebas Automatizadas con Selenium</h4>
-        <div class="tech-icons">
-          <i class="devicon-java-plain colored" title="Java"></i>
-          <i class="devicon-selenium-plain colored" title="Selenium"></i>
-          <i class="devicon-junit-plain" title="JUnit"></i>
-        </div>
-        <p>
-          Suite de pruebas E2E desarrollada en <strong>Java</strong> utilizando
-          <strong>Selenium WebDriver</strong> y <strong>JUnit</strong> para validar
-          flujos críticos en aplicaciones web. Incluye ejecución automatizada y
-          reportes detallados de resultados.
-        </p>
-        <a
-          href="https://github.com/OAlvarezOliveira/Selenium"
-          target="_blank"
-          class="btn secondary"
-          >Ver en GitHub</a
-        >
-      </div>
-    </div>
-  </div>
-</section>
-
-  </main>
-
-  <!-- Footer flotante -->
-  <footer class="footer-fixed">
-    <a href="https://github.com/OAlvarezOliveira" target="_blank" class="social"><i
-        class="devicon-github-original"></i></a>
-    <a href="https://www.linkedin.com/in/oscar-alvarez-oliveira-462877241/" target="_blank" class="social"><i
-        class="devicon-linkedin-plain"></i></a>
-    <a href="mailto:oalvarezoliveira@gmail.com" class="social">✉️</a>
-    <a href="assets/CV.pdf" target="_blank" class="social">📄</a>
-    <button id="themeToggle" class="theme-btn">🌙</button>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
