@@ -15,10 +15,10 @@ body {
   font-family: system-ui, sans-serif;
   font-size: 18px;
   line-height: 1.7;
+  display: flex;
   background: var(--bg-color);
   color: var(--text-color);
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 /* =========================================
@@ -45,7 +45,7 @@ body {
 }
 
 /* =========================================
-   🧭 SIDEBAR
+   🧭 SIDEBAR (Desktop)
 ========================================= */
 .sidebar {
   position: fixed;
@@ -58,7 +58,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1000;
 }
 
 .profile {
@@ -97,33 +96,13 @@ body {
 }
 
 /* =========================================
-   🔘 BOTÓN DE TEMA
-========================================= */
-.theme-btn {
-  display: block;
-  margin: 2rem auto;
-  border: 1px solid var(--border-color);
-  background: var(--card-bg);
-  color: var(--text-color);
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.theme-btn:hover {
-  transform: scale(1.1);
-  color: var(--accent-color);
-}
-
-/* =========================================
    📜 MAIN / SECCIONES
 ========================================= */
 main {
   margin-left: 240px;
+  min-height: 100vh;
   scroll-behavior: smooth;
-  height: auto;
+  overflow-y: auto;
 }
 
 .section {
@@ -154,25 +133,8 @@ main {
 
 .intro {
   text-align: justify;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 1.05rem;
-}
-
-/* Glow effect */
-.glow {
-  display: inline-block;
-  background: linear-gradient(90deg, var(--accent-color), #00c6ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 1 !important;
-  filter: drop-shadow(0 0 4px rgba(74,144,226,0.5));
-  animation: glow-in 2s ease forwards;
-}
-
-@keyframes glow-in {
-  0% { opacity: 0; transform: translateY(10px); }
-  60% { opacity: 1; transform: translateY(0); }
-  100% { filter: drop-shadow(0 0 6px rgba(74,144,226,0.4)); }
 }
 
 @keyframes fade-up {
@@ -201,8 +163,8 @@ main {
 }
 
 .tab.active {
-  background: var(--accent-color);
-  color: white;
+  background: var(--link-color);
+  color: #fff;
 }
 
 .tab-content {
@@ -221,28 +183,29 @@ main {
 }
 
 .stack-item {
-  padding: 1.2rem;
-  border-radius: 1rem;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: 0.25s;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  background-color: var(--bg-card);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: 0.25s ease;
 }
 
 .stack-item:hover {
-  transform: translateY(-6px) scale(1.05);
+  transform: translateY(-6px);
   border-color: var(--accent-color);
 }
 
-.stack-item i, 
-.stack-item img {
-  font-size: 2.5rem;
-  width: 42px;
-  height: 42px;
-  margin-bottom: 0.4rem;
+.stack-item img,
+.stack-item i {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
 }
 
 /* =========================================
@@ -258,20 +221,8 @@ main {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.2rem;
   text-align: left;
-}
-
-/* Icons row inside project cards */
-.project-tech {
-  display: flex;
-  gap: 0.4rem;
-  margin-bottom: 0.5rem;
-}
-.project-tech i, 
-.project-tech img {
-  width: 24px;
-  height: 24px;
 }
 
 /* =========================================
@@ -279,66 +230,107 @@ main {
 ========================================= */
 .footer-fixed {
   position: fixed;
-  bottom: 1.2rem;
+  bottom: 1rem;
   right: 1.5rem;
   display: flex;
-  gap: 1.1rem;
-  background: rgba(30, 40, 55, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
+  gap: 1rem;
   padding: 0.7rem 1rem;
-  z-index: 2000;
+  border-radius: 12px;
+  background: rgba(30, 40, 55, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 999;
 }
 
 .footer-fixed .social {
+  font-size: 1.5rem;
   color: var(--text-color);
-  font-size: 1.35rem;
+  transition: 0.25s;
+}
+
+.footer-fixed .social:hover {
+  color: var(--accent-color);
+}
+
+.footer-fixed .theme-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
 }
 
 /* =========================================
-   ✨ ANIMACIONES REVEAL
+   ✨ REVEAL
 ========================================= */
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity .6s, transform .6s;
 }
 
-.reveal.in-view {
+.js .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* =========================================
-   📱 RESPONSIVE FIXES
-========================================= */
-@media(max-width: 768px){
+/* ============================================================
+   📱 MOBILE RESPONSIVE FIX
+============================================================ */
+@media (max-width: 768px) {
 
+  /* Sidebar -> top-nav */
   .sidebar {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
     height: auto;
-    padding: 1rem;
+    width: 100%;
+    padding: 0.8rem 1rem;
     flex-direction: row;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    border-right: none;
   }
 
-  .profile { display: none; }
-  .side-nav ul { flex-direction: row; gap: 1.2rem; }
+  /* Hide profile image */
+  .profile {
+    display: none !important;
+  }
 
+  .side-nav ul {
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 0;
+  }
+
+  /* main area pushed below top menu */
   main {
     margin-left: 0;
-    margin-top: 80px;
-    height: auto;
+    margin-top: 70px;
     overflow-y: visible;
-    scroll-snap-type: none;
   }
 
   .section {
-    height: auto;
-    padding: 3.5rem 1.2rem;
+    min-height: auto;
+    padding: 4rem 1.2rem;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    text-align: center;
   }
 
   .stack-grid {
@@ -346,18 +338,31 @@ main {
     gap: 1rem;
   }
 
-  .projects {
-    grid-template-columns: 1fr;
-  }
-
+  /* Footer floating smaller + centered */
   .footer-fixed {
     right: 50%;
     transform: translateX(50%);
-    bottom: 0.8rem;
-    padding: 0.4rem 0.6rem;
-    gap: 0.6rem;
+    bottom: 0.6rem;
+    padding: 0.5rem 0.8rem;
+    gap: 0.7rem;
   }
 
-  .footer-fixed .social { font-size: 1.1rem; }
-  .theme-btn { width: 40px; height: 40px; }
+  .footer-fixed .social {
+    font-size: 1.2rem;
+  }
+
+  .footer-fixed .theme-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Ensure email is clickable */
+  .footer-fixed a,
+  .footer-fixed button {
+    pointer-events: auto !important;
+  }
+
+  .project-card {
+    margin: 1rem 0;
+  }
 }
