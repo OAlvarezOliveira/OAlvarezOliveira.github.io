@@ -312,6 +312,44 @@ main {
   line-height: 1.6;
 }
 
+.project-screenshots {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.2rem;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.project-screenshots::-webkit-scrollbar {
+  height: 4px;
+}
+
+.project-screenshots::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-screenshots::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.project-screenshots img {
+  height: 200px;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  object-fit: cover;
+  object-position: top center;
+  transition: opacity 0.2s ease;
+}
+
+.project-screenshots img:hover {
+  opacity: 0.85;
+}
+
 .btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;

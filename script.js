@@ -6,7 +6,8 @@ const themeBtn = document.getElementById("themeToggle");
 
 body.style.transition = "background 0.25s ease, color 0.25s ease";
 
-const savedTheme = localStorage.getItem("theme") || "dark";
+let savedTheme = "dark";
+try { savedTheme = localStorage.getItem("theme") || "dark"; } catch (e) {}
 body.className = savedTheme;
 
 themeBtn.textContent = savedTheme === "dark" ? "🌙" : "☀️";
@@ -16,7 +17,7 @@ themeBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
 
   const newTheme = body.classList.contains("dark") ? "dark" : "light";
-  localStorage.setItem("theme", newTheme);
+  try { localStorage.setItem("theme", newTheme); } catch (e) {}
 
   themeBtn.textContent = newTheme === "dark" ? "🌙" : "☀️";
 });
