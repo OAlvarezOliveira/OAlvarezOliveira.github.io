@@ -1,254 +1,366 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Óscar Álvarez Oliveira | Portfolio</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Óscar Álvarez Oliveira – Backend Developer</title>
 
-    <!-- 🔥 SEO / OPEN GRAPH -->
-    <meta name="description" content="Portfolio profesional de Óscar Álvarez Oliveira — Backend Developer con Java, Spring Boot, PHP y Azure. Proyectos reales con stakeholders.">
-    <meta property="og:title" content="Óscar Álvarez Oliveira – Backend Developer | Java · Spring Boot · Azure">
-    <meta property="og:description" content="Desarrollo Backend con Java, Spring Boot, PHP/Symfony y Angular. DevOps & Cloud con Azure y AWS.">
-    <meta property="og:image" content="assets/preview.png">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://oalvarezoliveira.github.io/">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- SEO / Open Graph -->
+  <meta name="description" content="Portfolio de Óscar Álvarez Oliveira — Backend Developer. Java, Spring Boot, DevOps & Cloud.">
+  <meta property="og:title" content="Óscar Álvarez Oliveira – Backend Developer">
+  <meta property="og:description" content="Java · Spring Boot · Azure. Backend y DevOps con proyectos reales.">
+  <meta property="og:image" content="assets/preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oalvarezoliveira.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <!-- 🔥 Preconnect para acelerar iconos -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/devicon.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.querySelectorAll('[data-reveal]:not([data-reveal="in"])').forEach(function (el) {
+          el.setAttribute('data-reveal', 'in');
+        });
+      }, 2000);
+    });
+  </script>
+</head>
+<body>
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/devicon.min.css" />
-  </head>
-
-  <body class="dark">
-
-    <!-- ========================================================
-       📱 MENÚ MÓVIL (con accesibilidad)
-    ========================================================== -->
-    <nav class="mobile-nav" aria-label="Navegación móvil">
-      <a href="#about">Sobre mí</a>
-      <a href="#techstack">Tech Stack</a>
-      <a href="#projects">Proyectos</a>
-    </nav>
-
-    <!-- ========================================================
-       🧭 SIDEBAR DESKTOP
-    ========================================================== -->
-    <aside class="sidebar">
-      <div class="profile">
-        <img src="assets/profile.jpg" 
-             alt="Foto de Óscar Álvarez Oliveira" 
-             class="profile-pic"
-             onerror="this.style.display='none'" />
-      </div>
-
-      <nav class="side-nav" aria-label="Navegación principal">
-        <ul>
-          <li><a href="#about">Sobre mí</a></li>
-          <li><a href="#techstack">Tech Stack</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- ========================================================
-       🏠 MAIN CONTENT
-    ========================================================== -->
-    <main>
-
-      <!-- ============================ -->
-      <!-- 🔥 HERO / SOBRE MÍ -->
-      <!-- ============================ -->
-      <section id="about" class="section" aria-labelledby="about-title">
-        <div class="container">
-          
-          <h1 id="about-title" class="title">Óscar Álvarez Oliveira</h1>
-          <h2 class="subtitle glow">Backend Developer en formación | Java · Spring Boot · Azure</h2>
-
-          <!-- BOTONES CTA -->
-          <div class="hero-buttons">
-            <a href="#projects" class="btn">Ver Proyectos</a>
-            <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Descargar CV</a>
-          </div>
-
-          <p class="intro">
-              Desarrollo aplicaciones backend con Java + Spring Boot, y trabajo con PHP/Symfony y Angular
-              en entorno profesional. Experiencia en DevOps & Cloud con Azure y AWS, CI/CD con Jenkins
-              y automatización de pruebas con Selenium. Actualmente en prácticas como desarrollador
-              backend en Macrotest (Santiago de Compostela).
-          </p>
-        </div>
-      </section>
-
-      <!-- ============================ -->
-      <!-- ⚙️ TECH STACK -->
-      <!-- ============================ -->
-      <section id="techstack" class="section" aria-labelledby="techstack-title">
-        <div class="container">
-          
-          <h2 id="techstack-title" class="section-title">Tech Stack</h2>
-          <p class="section-desc">Tecnologías principales de desarrollo backend, QA, automatización y entornos cloud.</p>
-
-          <!-- Tabs -->
-          <div class="tabs">
-            <button class="tab active" data-target="tab-languages">Lenguajes</button>
-            <button class="tab" data-target="tab-qa">QA & Testing</button>
-            <button class="tab" data-target="tab-devops">DevOps & Cloud</button>
-            <button class="tab" data-target="tab-tools">Herramientas</button>
-          </div>
-
-          <!-- LENGUAJES -->
-          <div id="tab-languages" class="tab-content active">
-            <div class="stack-grid">
-              <a href="https://www.java.com" class="stack-item" aria-label="Java"><i class="devicon-java-plain colored" aria-hidden="true"></i><span>Java</span></a>
-              <a href="https://www.php.net" class="stack-item" aria-label="PHP"><i class="devicon-php-plain colored" aria-hidden="true"></i><span>PHP</span></a>
-              <a href="https://www.mysql.com" class="stack-item" aria-label="SQL / MySQL"><i class="devicon-mysql-plain colored" aria-hidden="true"></i><span>SQL</span></a>
-              <a href="https://developer.mozilla.org/docs/Web/JavaScript" class="stack-item" aria-label="JavaScript"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span>JavaScript</span></a>
-              <a href="https://developer.mozilla.org/docs/Web/HTML" class="stack-item" aria-label="HTML5"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML5</span></a>
-              <a href="https://developer.mozilla.org/docs/Web/CSS" class="stack-item" aria-label="CSS3"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span>CSS3</span></a>
-              <a href="https://spring.io/projects/spring-boot" class="stack-item" aria-label="Spring Boot"><i class="devicon-spring-plain colored" aria-hidden="true"></i><span>Spring Boot</span></a>
-              <a href="https://angular.io" class="stack-item" aria-label="Angular"><i class="devicon-angular-plain colored" aria-hidden="true"></i><span>Angular</span></a>
-              <a href="https://symfony.com" class="stack-item" aria-label="Symfony"><i class="devicon-symfony-plain colored" aria-hidden="true"></i><span>Symfony</span></a>
-            </div>
-          </div>
-
-          <!-- QA -->
-          <div id="tab-qa" class="tab-content">
-            <div class="stack-grid">
-              <a href="https://www.selenium.dev" class="stack-item" aria-label="Selenium"><i class="devicon-chrome-plain" aria-hidden="true"></i><span>Selenium</span></a>
-              <a href="https://www.postman.com" class="stack-item" aria-label="Postman"><i class="devicon-postman-plain colored" aria-hidden="true"></i><span>Postman</span></a>
-            </div>
-          </div>
-
-          <!-- DEVOPS -->
-          <div id="tab-devops" class="tab-content">
-            <div class="stack-grid">
-              <a href="https://azure.microsoft.com" class="stack-item" aria-label="Azure"><i class="devicon-azure-plain colored" aria-hidden="true"></i><span>Azure</span></a>
-              <a href="https://aws.amazon.com" class="stack-item" aria-label="AWS">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazonaws.svg" height="40" width="40" aria-hidden="true">
-                <span>AWS</span>
-              </a>
-              <a href="https://www.jenkins.io" class="stack-item" aria-label="Jenkins"><i class="devicon-jenkins-plain colored" aria-hidden="true"></i><span>Jenkins</span></a>
-              <a href="https://www.docker.com" class="stack-item" aria-label="Docker"><i class="devicon-docker-plain colored" aria-hidden="true"></i><span>Docker</span></a>
-              <a href="https://kubernetes.io" class="stack-item" aria-label="Kubernetes"><i class="devicon-kubernetes-plain colored" aria-hidden="true"></i><span>Kubernetes</span></a>
-              <a href="https://www.ansible.com" class="stack-item" aria-label="Ansible"><i class="devicon-ansible-plain colored" aria-hidden="true"></i><span>Ansible</span></a>
-              <a href="https://www.terraform.io" class="stack-item" aria-label="Terraform"><i class="devicon-terraform-plain colored" aria-hidden="true"></i><span>Terraform</span></a>
-            </div>
-          </div>
-
-          <!-- HERRAMIENTAS -->
-          <div id="tab-tools" class="tab-content">
-            <div class="stack-grid">
-              <a href="https://git-scm.com" class="stack-item" aria-label="Git"><i class="devicon-git-plain colored" aria-hidden="true"></i><span>Git</span></a>
-              <a href="https://github.com" class="stack-item" aria-label="GitHub"><i class="devicon-github-original" aria-hidden="true"></i><span>GitHub</span></a>
-              <a href="https://www.gnu.org/software/bash" class="stack-item" aria-label="Bash"><i class="devicon-bash-plain" style="color:#00e676" aria-hidden="true"></i><span>Bash</span></a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ============================ -->
-<!-- 💼 PROYECTOS -->
-<!-- ============================ -->
-<section id="projects" class="section" aria-labelledby="projects-title">
-  <div class="container">
-    
-    <h2 id="projects-title" class="section-title">Proyectos</h2>
-    <p class="section-desc">Proyectos de desarrollo backend, DevOps y despliegue cloud.</p>
-
-    <div class="projects">
-
-      <div class="project-card">
-        <h4>MELIFERA — Plataforma de Gestión Apícola con IA</h4>
-        <div class="tech-icons">
-          <i class="devicon-spring-plain colored"></i>
-          <i class="devicon-java-plain colored"></i>
-          <i class="devicon-android-plain colored"></i>
-          <i class="devicon-postgresql-plain colored"></i>
-          <i class="devicon-docker-plain colored"></i>
-        </div>
-        <div class="project-screenshots">
-          <img src="assets/melifera-app-home.jpg" alt="App Android — pantalla de inicio con modo campo">
-          <img src="assets/melifera-app-colmena.jpg" alt="App Android — ficha de colmena 207">
-          <img src="assets/melifera-dashboard.png" alt="Backoffice — panel de control">
-          <img src="assets/melifera-colmenas.png" alt="Backoffice — gestión de colmenas">
-        </div>
-        <p>Plataforma completa de gestión apícola: API REST en Spring Boot 3.5 + Java 21, app Android en Kotlin y backoffice web. Pipeline de voz con Whisper + n8n + Claude Haiku que transcribe notas de campo y las convierte en revisiones estructuradas. NGINX + 2 instancias, Prometheus/Grafana, CI/CD con GitHub Actions. Validado en campo con 300+ colmenas. Proyecto Final de Ciclo — DAM.</p>
-        <span class="btn secondary" style="opacity:0.5;cursor:default;" aria-label="Repositorio privado">Repo privado</span>
-      </div>
-
-      <div class="project-card">
-        <h4>Despliegue Cloud Automatizado en Azure</h4>
-        <div class="tech-icons">
-          <i class="devicon-terraform-plain colored"></i>
-          <i class="devicon-ansible-plain colored"></i>
-          <i class="devicon-azure-plain colored"></i>
-          <i class="devicon-kubernetes-plain colored"></i>
-        </div>
-        <p>Infraestructura automatizada en Azure usando Terraform, Ansible y Kubernetes. Enfoque DevOps e IaC. Experto Universitario DevOps & Cloud — UNIR (9,10).</p>
-        <a href="https://github.com/OAlvarezOliveira/despliegue-cloud-automatizado"
-           target="_blank" rel="noopener noreferrer" 
-           class="btn secondary">Ver en GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <h4>ToDo List AWS — CI/CD con SAM y Jenkins</h4>
-        <div class="tech-icons">
-          <i class="devicon-amazonwebservices-plain colored"></i>
-          <i class="devicon-jenkins-plain colored"></i>
-          <i class="devicon-docker-plain colored"></i>
-        </div>
-        <p>API REST serverless desplegada con AWS SAM e integrada en pipelines CI/CD con Jenkins. Experto Universitario DevOps & Cloud — UNIR (9,10).</p>
-        <a href="https://github.com/OAlvarezOliveira/todo-list-aws"
-           target="_blank" rel="noopener noreferrer" 
-           class="btn secondary">Ver en GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <h4>WooCommerce Engel Integration</h4>
-        <div class="tech-icons">
-          <i class="devicon-php-plain colored"></i>
-          <i class="devicon-wordpress-plain colored"></i>
-          <i class="devicon-mysql-plain colored"></i>
-        </div>
-        <p>Plugin WooCommerce para importar productos, sincronizar catálogo y gestionar pedidos.</p>
-        <a href="https://github.com/OAlvarezOliveira/woocommerce-engel-integration"
-           target="_blank" rel="noopener noreferrer"
-           class="btn secondary">Ver en GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <h4>Pruebas Automatizadas con Selenium</h4>
-        <div class="tech-icons">
-          <i class="devicon-java-plain colored"></i>
-          <i class="devicon-selenium-plain colored"></i>
-          <i class="devicon-postman-plain colored"></i>
-        </div>
-        <p>Suite de pruebas E2E con Java y Selenium WebDriver. Automatización de flujos críticos.</p>
-        <a href="https://github.com/OAlvarezOliveira/selenium-cert"
-           target="_blank" rel="noopener noreferrer"
-           class="btn secondary">Ver en GitHub</a>
-      </div>
-
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-logo">~/oao</div>
+      <div class="brand-name">Óscar Álvarez Oliveira</div>
     </div>
-  </div>
-</section>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#stack">Stack</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#contacto">Contacto</a>
+      <span class="badge-available"><span class="badge-dot"></span>Disponible</span>
+    </nav>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú de navegación">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </header>
 
-    </main>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#stack">Stack</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
-    <!-- ========================================================
-       👣 FOOTER
-    ========================================================== -->
-    <footer class="footer-fixed">
-      <a href="https://github.com/OAlvarezOliveira" target="_blank" rel="noopener noreferrer" class="social" aria-label="GitHub"><i class="devicon-github-original"></i></a>
-      <a href="https://www.linkedin.com/in/oscar-alvarez-oliveira-462877241/" target="_blank" rel="noopener noreferrer" class="social" aria-label="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
-      <a href="mailto:oalvarezoliveira@gmail.com" class="social" aria-label="Email">✉️</a>
-      <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="social" aria-label="CV">📄</a>
-      <button id="themeToggle" class="theme-btn" aria-label="Cambiar tema">🌙</button>
-    </footer>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-copy">
+      <p class="kicker">// Backend Developer</p>
+      <h1 class="hero-title">Óscar<br>Álvarez<span class="accent">.</span></h1>
+      <p class="hero-tagline">Java · Spring Boot · Azure</p>
+      <p class="hero-desc">
+        Construyo APIs y plataformas backend que llegan a producción: Spring Boot, PHP/Symfony y Angular
+        en entorno profesional, con DevOps &amp; Cloud en Azure y AWS, CI/CD y testing automatizado.
+      </p>
+      <div class="hero-actions">
+        <a href="#proyectos" class="btn-primary">Ver proyectos ↓</a>
+        <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary">Descargar CV</a>
+        <a href="https://github.com/OAlvarezOliveira" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="icon-btn"><i class="devicon-github-original"></i></a>
+        <a href="https://www.linkedin.com/in/oscar-alvarez-oliveira-462877241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="icon-btn icon-btn-linkedin"><i class="devicon-linkedin-plain"></i></a>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div class="hero-visual">
+      <img src="assets/profile.jpg" alt="Óscar Álvarez Oliveira" class="hero-avatar" onerror="this.style.display='none'">
+      <div class="terminal">
+        <div class="terminal-header">
+          <span class="term-dot term-dot-red"></span>
+          <span class="term-dot term-dot-yellow"></span>
+          <span class="term-dot term-dot-green"></span>
+          <span class="terminal-title">oscar@portfolio: ~</span>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section id="proyectos">
+    <div data-reveal>
+      <p class="kicker">01 · Proyecto destacado</p>
+      <h2 class="section-title">Trabajo</h2>
+    </div>
+
+    <div id="featured" data-reveal>
+      <div class="featured-info">
+        <div class="featured-badges">
+          <span class="badge-case">Caso destacado</span>
+          <span class="badge-context">Proyecto Final de Ciclo — DAM</span>
+        </div>
+        <h3 class="featured-title">MELIFERA<span class="accent"> —</span> Gestión Apícola con IA</h3>
+        <div class="featured-tags">
+          <span class="tag-accent"><i class="devicon-spring-plain colored"></i>Spring Boot</span>
+          <span class="tag-accent"><i class="devicon-java-plain colored"></i>Java 21</span>
+          <span class="tag-accent"><i class="devicon-kotlin-plain colored"></i>Kotlin/Android</span>
+          <span class="tag-accent"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+          <span class="tag-accent"><i class="devicon-docker-plain colored"></i>Docker</span>
+        </div>
+        <p class="featured-desc">
+          API REST en Spring Boot 3.5 + Java 21, app Android en Kotlin y backoffice web.
+          Pipeline de voz con Whisper + n8n + Claude Haiku que convierte notas de campo
+          en revisiones estructuradas. NGINX con 2 instancias, Prometheus/Grafana y CI/CD con GitHub Actions.
+        </p>
+        <div class="featured-stats">
+          <div><div class="stat-value">300+</div><div class="stat-label">colmenas en campo</div></div>
+          <div><div class="stat-value">3</div><div class="stat-label">superficies: API · Android · web</div></div>
+          <div><div class="stat-value">24/7</div><div class="stat-label">monitorizado</div></div>
+        </div>
+      </div>
+      <div class="featured-shots">
+        <img src="assets/melifera-app-home.jpg" alt="App Android — pantalla de inicio">
+        <img src="assets/melifera-app-colmena.jpg" alt="App Android — ficha de colmena">
+        <img src="assets/melifera-dashboard.png" alt="Backoffice — panel de control">
+        <img src="assets/melifera-colmenas.png" alt="Backoffice — gestión de colmenas">
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER PROJECTS -->
+  <section class="projects-more">
+    <div class="project-grid">
+      <div class="project-card" data-reveal>
+        <div class="project-kind">IaC · Cloud</div>
+        <h4 class="project-title">Despliegue Cloud Automatizado en Azure</h4>
+        <div class="project-tags">
+          <span class="tag-muted"><i class="devicon-terraform-plain colored"></i>Terraform</span>
+          <span class="tag-muted"><i class="devicon-ansible-plain colored"></i>Ansible</span>
+          <span class="tag-muted"><i class="devicon-azure-plain colored"></i>Azure</span>
+          <span class="tag-muted"><i class="devicon-kubernetes-plain colored"></i>Kubernetes</span>
+        </div>
+        <p class="project-desc">Infraestructura automatizada en Azure usando Terraform, Ansible y Kubernetes. Enfoque DevOps e IaC. Experto Universitario DevOps &amp; Cloud — UNIR (9,10).</p>
+        <a href="https://github.com/OAlvarezOliveira/despliegue-cloud-automatizado" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub <span>↗</span></a>
+      </div>
+
+      <div class="project-card" data-reveal>
+        <div class="project-kind">Serverless · CI/CD</div>
+        <h4 class="project-title">ToDo List AWS — CI/CD con SAM y Jenkins</h4>
+        <div class="project-tags">
+          <span class="tag-muted"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS SAM</span>
+          <span class="tag-muted"><i class="devicon-jenkins-plain colored"></i>Jenkins</span>
+          <span class="tag-muted"><i class="devicon-docker-plain colored"></i>Docker</span>
+        </div>
+        <p class="project-desc">API REST serverless desplegada con AWS SAM e integrada en pipelines CI/CD con Jenkins. Experto Universitario DevOps &amp; Cloud — UNIR (9,10).</p>
+        <a href="https://github.com/OAlvarezOliveira/todo-list-aws" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub <span>↗</span></a>
+      </div>
+
+      <div class="project-card" data-reveal>
+        <div class="project-kind">E-commerce · PHP</div>
+        <h4 class="project-title">WooCommerce Engel Integration</h4>
+        <div class="project-tags">
+          <span class="tag-muted"><i class="devicon-php-plain colored"></i>PHP</span>
+          <span class="tag-muted"><i class="devicon-wordpress-plain colored"></i>WordPress</span>
+          <span class="tag-muted"><i class="devicon-mysql-plain colored"></i>MySQL</span>
+        </div>
+        <p class="project-desc">Plugin WooCommerce para importar productos, sincronizar catálogo y gestionar pedidos.</p>
+        <a href="https://github.com/OAlvarezOliveira/woocommerce-engel-integration" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub <span>↗</span></a>
+      </div>
+
+      <div class="project-card" data-reveal>
+        <div class="project-kind">QA · Automatización</div>
+        <h4 class="project-title">Pruebas Automatizadas con Selenium</h4>
+        <div class="project-tags">
+          <span class="tag-muted"><i class="devicon-java-plain colored"></i>Java</span>
+          <span class="tag-muted"><i class="devicon-selenium-plain colored"></i>Selenium</span>
+          <span class="tag-muted"><i class="devicon-postman-plain colored"></i>Postman</span>
+        </div>
+        <p class="project-desc">Suite de pruebas E2E con Java y Selenium WebDriver. Automatización de flujos críticos.</p>
+        <a href="https://github.com/OAlvarezOliveira/selenium-cert" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div data-reveal>
+      <p class="kicker">02 · Herramientas</p>
+      <h2 class="section-title">Tech Stack</h2>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card" data-reveal>
+        <div class="stack-head">
+          <span class="stack-num">01</span>
+          <h3>Lenguajes &amp; Frameworks</h3>
+        </div>
+        <div class="stack-pills">
+          <span class="pill"><i class="devicon-java-plain colored"></i>Java</span>
+          <span class="pill"><i class="devicon-spring-plain colored"></i>Spring Boot</span>
+          <span class="pill"><i class="devicon-php-plain colored"></i>PHP</span>
+          <span class="pill"><i class="devicon-symfony-plain"></i>Symfony</span>
+          <span class="pill"><i class="devicon-angular-plain colored"></i>Angular</span>
+          <span class="pill"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+          <span class="pill"><i class="devicon-mysql-plain colored"></i>SQL / MySQL</span>
+          <span class="pill"><i class="devicon-html5-plain colored"></i>HTML5</span>
+          <span class="pill"><i class="devicon-css3-plain colored"></i>CSS3</span>
+        </div>
+      </div>
+
+      <div class="stack-card" data-reveal>
+        <div class="stack-head">
+          <span class="stack-num">02</span>
+          <h3>QA &amp; Testing</h3>
+        </div>
+        <div class="stack-pills">
+          <span class="pill"><i class="devicon-selenium-plain colored"></i>Selenium</span>
+          <span class="pill"><i class="devicon-java-plain colored"></i>JUnit</span>
+          <span class="pill"><i class="devicon-postman-plain colored"></i>Postman</span>
+          <span class="pill"><i class="devicon-appium-original colored"></i>Appium</span>
+          <span class="pill"><i class="devicon-jira-plain colored"></i>Jira</span>
+        </div>
+      </div>
+
+      <div class="stack-card" data-reveal>
+        <div class="stack-head">
+          <span class="stack-num">03</span>
+          <h3>DevOps &amp; Cloud</h3>
+        </div>
+        <div class="stack-pills">
+          <span class="pill"><i class="devicon-azure-plain colored"></i>Azure</span>
+          <span class="pill"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span>
+          <span class="pill"><i class="devicon-docker-plain colored"></i>Docker</span>
+          <span class="pill"><i class="devicon-kubernetes-plain colored"></i>Kubernetes</span>
+          <span class="pill"><i class="devicon-ansible-plain colored"></i>Ansible</span>
+          <span class="pill"><i class="devicon-terraform-plain colored"></i>Terraform</span>
+          <span class="pill"><i class="devicon-jenkins-plain colored"></i>Jenkins</span>
+        </div>
+      </div>
+
+      <div class="stack-card" data-reveal>
+        <div class="stack-head">
+          <span class="stack-num">04</span>
+          <h3>Herramientas</h3>
+        </div>
+        <div class="stack-pills">
+          <span class="pill"><i class="devicon-git-plain colored"></i>Git</span>
+          <span class="pill"><i class="devicon-github-original"></i>GitHub</span>
+          <span class="pill"><i class="devicon-bash-plain"></i>Bash</span>
+          <span class="pill"><i class="devicon-linux-plain"></i>Linux</span>
+          <span class="pill"><i class="devicon-vscode-plain colored"></i>VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experiencia">
+    <div data-reveal>
+      <p class="kicker">03 · Trayectoria</p>
+      <h2 class="section-title">Experiencia</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-period">Abr — Jul 2026</div>
+        <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <span class="timeline-badge badge-work">Trabajo</span>
+          <h4>Junior Full Stack Developer — Macrotest</h4>
+          <p>Santiago de Compostela · Híbrido · Contrato de formación. Stack Angular + PHP (Symfony) con PostgreSQL y MariaDB, dockerizado. Funcionalidades end-to-end en entorno de producción real, con Git y buenas prácticas de equipo.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-period">Sept 2025 — Abr 2026</div>
+        <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <span class="timeline-badge badge-edu">Formación</span>
+          <h4>DAM — Técnico Superior en Desarrollo de Aplicaciones Multiplataforma</h4>
+          <p>CIFP A Carballeira-Marcos Valcárcel. Backend con Java, PHP y Python, bases de datos, servicios REST, testing (JUnit, Selenium) y Docker. Proyecto final: MELIFERA.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-period">Sept 2024 — Jul 2025</div>
+        <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <span class="timeline-badge badge-work">Trabajo</span>
+          <h4>Especialista en compras · Soluciones IT &amp; Hardware — Supercomp Digital</h4>
+          <p>Ourense. Gestión técnica de compras IT y relación con fabricantes (Brother, POSIFLEX, HP, Dell), configurando servidores a medida. −25% en tiempos de validación técnica estandarizando plantillas y procedimientos.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-period">Abr 2013 — Jul 2025</div>
+        <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <span class="timeline-badge badge-work">Trabajo</span>
+          <h4>Responsable B2B · Coordinación Técnica &amp; Procesos IT — Primux Trading</h4>
+          <p>Ourense. Coordinación técnica de Atención al Cliente B2B (equipo de 7, +25.000 casos/año). Automatización de flujos IT (Salesforce, Zoho), −35% en tiempos de resolución. Al final de esta etapa inicié DAM y la transición a backend.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-period">Mar — Oct 2023</div>
+        <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <span class="timeline-badge badge-edu">Certificación</span>
+          <h4>Experto Universitario DevOps &amp; Cloud — UNIR</h4>
+          <p>IaC (Terraform, Ansible), CI/CD (Jenkins) y despliegue en AWS, Azure y Google Cloud. Nota: 9,10.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-period">Sept 2010 — Mar 2012</div>
+        <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <span class="timeline-badge badge-work">Trabajo</span>
+          <h4>Técnico IT &amp; Sysadmin · Sistemas y QA — Egatel</h4>
+          <p>Ourense. Windows Server, Active Directory, backups y scripting (Bash/PowerShell). Gestión de calidad y trazabilidad documental en fabricación electrónica.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-period">Sept 2007 — Ene 2010</div>
+        <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <span class="timeline-badge badge-work">Trabajo</span>
+          <h4>Técnico en Hardware &amp; Soporte IT · PyME e I+D — Egatel</h4>
+          <p>Ourense. Diseño de esquemáticos y PCB (KiCad, Altium), simulación y documentación técnica (BOM, Gerber) para fabricación SMD/SMT. Soporte IT del departamento de I+D.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-period">Sept 2004 — May 2006</div>
+        <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <span class="timeline-badge badge-edu">Formación</span>
+          <h4>Técnico Superior en Informática y Telecomunicaciones — CIFP A Farixa</h4>
+          <p>Ourense. Redes LAN/WAN, cableado estructurado, sistemas IT y telefonía IP.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contacto">
+    <p class="kicker">04 · Contacto</p>
+    <h2 class="footer-title">¿Construimos algo juntos<span class="accent">?</span></h2>
+    <p class="footer-sub">Abierto a oportunidades backend y DevOps. Respondo rápido.</p>
+    <a href="mailto:oalvarezoliveira@gmail.com" class="btn-email">oalvarezoliveira@gmail.com</a>
+    <div class="footer-links">
+      <a href="https://github.com/OAlvarezOliveira" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/oscar-alvarez-oliveira-462877241/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+    </div>
+    <p class="footer-copy">© 2026 Óscar Álvarez Oliveira — hecho con cariño y CI/CD</p>
+  </footer>
+
+</body>
 </html>
